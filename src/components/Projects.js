@@ -3,42 +3,53 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/Project-4 (1).png";
+import projImg5 from "../assets/img/E-commerce-ClientSide.png";
+import projImg6 from "../assets/img/E-commerce-AdminSide.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
-
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Business Website",
+      description: "Built with HTML & CSS (early project)",
       imgUrl: projImg1,
+      siteUrl: "https://yousefahmed32.github.io/first-1/",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Watch Store",
+      description: "Developed using HTML, CSS, CSS3 animations",
       imgUrl: projImg2,
+      siteUrl: "https://yousefahmed32.github.io/Watches/",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Car Dealership",
+      description: "Responsive Bootstrap website",
       imgUrl: projImg3,
+      siteUrl: "https://yousefahmed32.github.io/Cars/",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "JavaScript E-commerce",
+      description: "Dynamic shop using Vanilla JS",
+      imgUrl: projImg4,
+      siteUrl: "https://yousefahmed32.github.io/Landing-Page-E-commrce/",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Full-Stack E-commerce (Client)",
+      description: "MERN stack + Tailwind + Shadcn + Lucide ",
+      imgUrl: projImg5,
+      siteUrl:
+        "https://jam.dev/c/d487f6bf-a490-478b-8739-fc8eae19b2d6?startFrom=0.00",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Full-Stack E-commerce (Admin)",
+      description: "MERN stack admin dashboard",
+      imgUrl: projImg6,
+      siteUrl:
+        "https://jam.dev/c/9cbdb054-1d67-441d-ab23-76b65f1bb530",
     },
   ];
 
@@ -48,51 +59,72 @@ export const Projects = () => {
         <Row>
           <Col size={12}>
             <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <h2>Projects</h2>
+                  <p>
+                    Some of my work showcasing different technologies and stacks.
+                  </p>
+
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                    >
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">Projects</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">Tasks Front</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">Tasks Backend</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+
+                    <Tab.Content
+                      id="slideInUp"
+                      className={
+                        isVisible
+                          ? "animate__animated animate__slideInUp"
+                          : ""
+                      }
+                    >
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {projects.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
+                        </Row>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="second">
+                        <p>Websites built with HTML, CSS, and Bootstrap.</p>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="third">
+                        <p>
+                          Full-stack projects using MERN, Tailwind, Shadcn, and
+                          Lucide.
+                        </p>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img
+        className="background-image-right"
+        src={colorSharp2}
+        alt="background decoration"
+      />
     </section>
-  )
-}
+  );
+};
